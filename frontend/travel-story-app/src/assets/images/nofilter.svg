@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200">
+  <!-- Nền tròn màu vàng nhạt -->
+  <circle cx="50" cy="50" r="50" fill="#FFFBE5" />
+  
+  <!-- Hình lịch -->
+  <rect x="30" y="35" width="40" height="35" rx="5" fill="none" stroke="#A6A659" stroke-width="4" />
+  <line x1="30" y1="42" x2="70" y2="42" stroke="#A6A659" stroke-width="3" />
+  <line x1="35" y1="32" x2="35" y2="35" stroke="#A6A659" stroke-width="4" />
+  <line x1="65" y1="32" x2="65" y2="35" stroke="#A6A659" stroke-width="4" />
+  
+  <!-- Khuôn mặt buồn -->
+  <circle cx="40" cy="50" r="1.5" fill="#A6A659" /> <!-- Mắt trái -->
+  <circle cx="60" cy="50" r="1.5" fill="#A6A659" /> <!-- Mắt phải -->
+  <path d="M43 60 Q50 55 57 60" fill="none" stroke="#A6A659" stroke-width="2" stroke-linecap="round" /> <!-- Miệng buồn -->
+</svg>

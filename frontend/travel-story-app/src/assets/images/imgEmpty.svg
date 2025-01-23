@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Nền vòng tròn xanh dương nhạt -->
+  <circle cx="100" cy="100" r="100" fill="#E5F8FF" />
+  
+  <!-- Cuốn sổ -->
+  <rect x="60" y="60" width="80" height="100" rx="8" ry="8" fill="white" stroke="#41C6F6" stroke-width="4" />
+  <line x1="70" y1="70" x2="130" y2="70" stroke="#41C6F6" stroke-width="2" /> <!-- Dòng kẻ đầu tiên -->
+  <line x1="70" y1="85" x2="130" y2="85" stroke="#41C6F6" stroke-width="2" /> <!-- Dòng kẻ thứ hai -->
+  <line x1="70" y1="100" x2="130" y2="100" stroke="#41C6F6" stroke-width="2" /> <!-- Dòng kẻ thứ ba -->
+
+  <!-- Cây bút -->
+  <path d="M110 130 L140 100 L145 105 L115 135 Z" fill="#41C6F6" /> <!-- Thân bút -->
+  <circle cx="143" cy="102" r="3" fill="#E5F8FF" /> <!-- Ngòi bút -->
+</svg>
