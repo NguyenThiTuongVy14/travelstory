@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors({ origin: "*" }));
 
 //Create account
-app.post("/create-account", async (req, res) => {
+app.post("create-account", async (req, res) => {
     try {
         const { fullName, email, password } = req.body;
         if (!fullName || !email || !password) {
@@ -58,7 +58,7 @@ app.post("/create-account", async (req, res) => {
     }
 });
 //Login
-app.post("/login", async (req, res) => {
+app.post("login", async (req, res) => {
     const { email, password } = req.body;
     if (!email || !password) {
         return res.status(400).json({ message: "Email and Password are required" });
@@ -83,7 +83,7 @@ app.post("/login", async (req, res) => {
 });
 
 //Get User 
-app.get("/getUser", authenticateToken, async (req, res) => {
+app.get("getUser", authenticateToken, async (req, res) => {
     const { userId } = req.user
     const isUser = await User.findOne({ _id: userId });
     if (!isUser) {
@@ -96,7 +96,7 @@ app.get("/getUser", authenticateToken, async (req, res) => {
 });
 
 //Route to handle image upload
-app.post("/image-upload", upload.single("image"), async (req, res) => {
+app.post("image-upload", upload.single("image"), async (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).json({ error: true, message: "No image uploaded" });
@@ -109,7 +109,7 @@ app.post("/image-upload", upload.single("image"), async (req, res) => {
 });
 
 //Delete imgage
-app.delete("/delete-image", async (req, res) => {
+app.delete("delete-image", async (req, res) => {
     const { imageUrl } = req.query;
     if (!imageUrl) {
         return res.status(400).json({ error: true, message: "imgaeUrl parameter is required" });
@@ -131,7 +131,7 @@ app.delete("/delete-image", async (req, res) => {
     }
 });
 //Add Travel Story
-app.post("/addTravel", authenticateToken, async (req, res) => {
+app.post("addTravel", authenticateToken, async (req, res) => {
     const { title, story, visitedLocation, imageUrl, visitedDate } = req.body;
     const { userId } = req.user;
     if (!title || !story || !visitedLocation || !visitedDate || !imageUrl) {
@@ -158,7 +158,7 @@ app.post("/addTravel", authenticateToken, async (req, res) => {
     }
 });
 //Get Travel Story
-app.get("/getAllTravelStories", authenticateToken, async (req, res) => {
+app.get("getAllTravelStories", authenticateToken, async (req, res) => {
     const { userId } = req.user;
 
     try {
@@ -171,7 +171,7 @@ app.get("/getAllTravelStories", authenticateToken, async (req, res) => {
 });
 
 //Edit Travel Story
-app.post("/editTravel/:id", authenticateToken, async (req, res) => {
+app.post("editTravel/:id", authenticateToken, async (req, res) => {
 
     const { id } = req.params;
     const { title, story, visitedLocation, imageUrl, visitedDate } = req.body;
@@ -185,7 +185,7 @@ app.post("/editTravel/:id", authenticateToken, async (req, res) => {
         if (!travelStory) {
             res.status(404).json({ error: true, message: "Travel story not found" });
         }
-        const defaultImage = `http://localhost:8000/assets/travelstory.jpg`;
+        const defaultImage = './assets/travelstory.jpg';
 
         travelStory.title = title;
         travelStory.story = story;
@@ -202,7 +202,7 @@ app.post("/editTravel/:id", authenticateToken, async (req, res) => {
 });
 
 //Delete Travel Story
-app.post("/deleteTravel/:id", authenticateToken, async (req, res) => {
+app.post("deleteTravel/:id", authenticateToken, async (req, res) => {
     const { id } = req.params;
     const { userId } = req.user;
     try {
@@ -232,7 +232,7 @@ app.post("/deleteTravel/:id", authenticateToken, async (req, res) => {
 });
 
 //Update isFavourite
-app.post("/updateFavourite/:id", authenticateToken, async (req, res) => {
+app.post("updateFavourite/:id", authenticateToken, async (req, res) => {
     const { id } = req.params;
     const { userId } = req.user;
     const { isFavourite } = req.body;
@@ -250,7 +250,7 @@ app.post("/updateFavourite/:id", authenticateToken, async (req, res) => {
 })
 
 //Search Travel Story
-app.get("/search", authenticateToken, async (req, res) => {
+app.get("search", authenticateToken, async (req, res) => {
     const { query } = req.query;
     const { userId } = req.user;
 
@@ -274,7 +274,7 @@ app.get("/search", authenticateToken, async (req, res) => {
 })
 
 //Filter travel stories by date range
-app.get("/filter", authenticateToken, async (req, res) => {
+app.get("filter", authenticateToken, async (req, res) => {
     const { startDate, endDate } = req.query;
     const { userId } = req.user;
 
