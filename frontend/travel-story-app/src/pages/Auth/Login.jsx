@@ -56,7 +56,7 @@ const Login = () => {
     <div className='h-screen bg-cyan-50 overflow-hidden realtive'>
 
       <div className='login-ui-box right-10 -top-40'></div>
-      <div className='login-ui-box bg-cyan-200 -bottom-40 right-1/2'></div>
+      <div className='login-ui-box bg-cyan-200 -bottom-40 right-1/2 '></div>
       <div className="container h-screen flex items-center justify-center px-20 mx-auto">
         <div className="w-2/4 h-[90vh] flex items-end bg-login-bg-img bg-cover bg-center rounded-lg p-10 z-50">
           <div>
